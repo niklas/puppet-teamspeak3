@@ -25,7 +25,7 @@ define teamspeak3 (
 
   service { 'teamspeak-server':
     enable => true,
-    ensure => started,
+    ensure => running,
     require => File['/etc/init.d/teamspeak-server']
   }
 
