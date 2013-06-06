@@ -2,7 +2,7 @@ define teamspeak3 (
   $ensure = present,
   $version = '3.0.7.2',
   $checksum = '0631b1d585ae26605394f582cea70db4',
-  $installdir = '/opt/teamspeak3'
+  $installdir = '/opt'
 ) {
 
   $arch = $architecture
@@ -19,7 +19,7 @@ define teamspeak3 (
 
   file { '/etc/init.d/teamspeak-server':
     ensure => link,
-    target => "$installdir/ts3server_startscript.sh",
+    target => "$installdir/teamspeak3-server_linux-${arch}/ts3server_startscript.sh",
     require => Archive["teamspeak${version}"]
   }
 
