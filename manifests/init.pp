@@ -14,6 +14,7 @@ define teamspeak3 (
     ensure => $ensure,
     digest_string => $checksum,
     url => "http://ftp.4players.de/pub/hosted/ts3/releases/${version}/teamspeak3-server_linux-${arch}-${version}.tar.gz",
+    root_dir => "teamspeak3-server_linux-${arch}",
     target => $installdir
   }
 
